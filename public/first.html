@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        p {
+            color: black;
+        }
+        h2 {
+            color: black;
+        }
+        .modal-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: 1000;
+            display: none;
+        }
+        .modal-content.show {
+            display: flex;
+        }
+        .modal-inner {
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            width: 500px;
+            max-width: 500px;
+            text-align: center;
+            position: relative;
+        }
+        .modal-inner .close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+        }
+        .back-to-home {
+            position: absolute;
+            top: 40px;
+            right: 30px;
+            z-index: 1001;
+        }
+    </style>
+</head>
+<body class="bg-gray-800 text-white">
+
+    <!-- Back to Home Button -->
+    <div class="back-to-home">
+        <a href="index.html" class="flex text-center items-center justify-center px-3 py-1 text-lg
+        font-medium text-white bg-indigo-600 rounded-xl transition duration-500 ease-in-out transform
+        hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Home</a>
+    </div>
+
+    <!-- Blog Section -->
+    <section class="bg-gray">
+        <div class="container px-6 py-10 mx-auto">
+            <h1 class="text-3xl font-semibold text-white capitalize lg:text-4xl">My Personal Blog</h1>
+
+            <div class="grid grid-cols-1 gap-8 mt-8 md:mt-16 md:grid-cols-2">
+                <!-- First Blog Post -->
+                <div class="relative lg:flex">
+                    <img class="object-cover w-full h-56 rounded-lg lg:w-64" src="img/aboutme.jpg" alt="">
+
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <a href="#" onclick="showModal('modal1')" class="text-xl font-semibold text-white bg-black bg-opacity-50 hover:text-yellow-500 transition-colors duration-300 px-4 py-2 rounded-lg">
+                            About Me
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Second Blog Post -->
+                <div class="relative lg:flex">
+                    <img class="object-cover w-full h-56 rounded-lg lg:w-64" src="img/skills.jpg" alt="">
+
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <a href="#" onclick="showModal('modal2')" class="text-xl font-semibold text-white bg-black bg-opacity-50 hover:text-yellow-500 transition-colors duration-300 px-4 py-2 rounded-lg">
+                            My Skills
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Third Blog Post -->
+                <div class="relative lg:flex">
+                    <img class="object-cover w-full h-56 rounded-lg lg:w-64" src="img/resme.jpg" alt="">
+
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <a href="#" onclick="showModal('modal3')" class="text-xl font-semibold text-white bg-black bg-opacity-50 hover:text-yellow-500 transition-colors duration-300 px-4 py-2 rounded-lg">
+                            Resume
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Fourth Blog Post -->
+                <div class="relative lg:flex">
+                    <img class="object-cover w-full h-56 rounded-lg lg:w-64" src="img/portfolio-logo.jpg" alt="">
+
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <a href="#" onclick="showModal('modal4')" class="text-xl font-semibold text-white bg-black bg-opacity-50 hover:text-yellow-500 transition-colors duration-300 px-4 py-2 rounded-lg">
+                            Portfolio
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal 1 -->
+    <div id="modal1" class="modal-content">
+        <div class="modal-inner">
+            <div class="close" onclick="hideModal('modal1')">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </div>
+            <h2 class="text-2xl font-bold">About Me</h2>
+            <hr>
+            <div class="container mx-auto px-4 py-8" data-aos="fade-up" data-aos-delay="100">
+
+                <div class="flex flex-wrap justify-center gap-4">
+                    <!-- Image Section -->
+                    <div class="w-full lg:w-1/3">
+                        <img src="assets/img/me.jpg" class="w-full h-auto rounded-lg" alt="">
+                    </div>
+                    <!-- Content Section -->
+                    <div class="w-full lg:w-2/3">
+                        <h2 class="text-2xl font-semibold mb-2">UI/UX Designer &amp; Web Developer.</h2>
+                        <p class="italic mb-4">
+                            Studied at Caraga State University, Ampayon Butuan City Agusan Del Norte. Holding a Degree of Bachelor of Science in Information Technology.
+                        </p>
+                        <div class="flex flex-wrap -mx-2">
+                            <!-- First Column -->
+                            <div class="w-full">
+                                <ul class="list-disc pl-5 space-y-2 text-black" style="text-align: left;">
+                                    <li><strong>Birthday:</strong> 17 July 2004</li>
+                                    <li><strong>Phone:</strong> 09916023109</li>
+                                    <li><strong>City:</strong> Butuan</li>
+                                </ul>
+                            </div>
+                            <!-- Second Column -->
+                            <div class="w-full mb-4">
+                                <ul class="list-disc pl-5 space-y-2 text-black" style="text-align: left;">
+                                    <li><strong>Age:</strong> 20</li>
+                                    <li><strong>Degree:</strong> Bachelor's Degree</li>
+                                    <li><strong>Email:</strong> rjhonlumales11@gmail.com</li>
+                                    <li><strong>Freelance:</strong> Available</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+            </div>
+                    </div>
+    </div>
+<!-- Modal 2 -->
+<div id="modal2" class="modal-content fixed inset-0 flex items-center justify-center bg-gray-800 bg-opacity-75">
+    <div class="modal-inner bg-white p-6 rounded-lg w-full max-w-lg">
+        <div class="flex items-center justify-between mb-4">
+            <h2 class="text-2xl font-bold">About Me</h2>
+            <div class="close cursor-pointer" onclick="hideModal('modal2')">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </div>
+        </div>
+        <hr class="my-4">
+        <p class="text-black mb-4">
+            Hey, I am highly experienced, and I can satisfy any of my clients with my work surely. My skills and services are:
+        </p>
+        <div class="flex" style="text-align: left;">
+            <div class="w-full md:w-1/2 px-3">
+                <ul class="list-disc list-inside text-black">
+                    <li>Graphics Designing</li>
+                    <li>Photo and Video Editing</li>
+                    <li>MS Office Applications</li>
+                    <li>Data Scraping</li>
+                </ul>
+            </div>
+            <div class="w-full md:w-1/2 px-3">
+                <ul class="list-disc list-inside text-black">
+                    <li>Data Entry</li>
+                    <li>80-100 Words Per Minute</li>
+                    <li>Social Media Management</li>
+                    <li>Social Media Marketing</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    <!-- Modal 3 -->
+<div id="modal3" class="modal-content">
+    <div class="modal-inner w-full max-w-2xl" style="text-align: left;">
+        <div class="close" onclick="hideModal('modal3')">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+        </div>
+        <h2 class="text-2xl font-bold mb-4">Resume</h2>
+        <hr class="my-4">
+
+        <!-- Section Title -->
+        <div class="container section-title mb-6" data-aos="fade-up">
+            <p class="text-gray-700">
+                To secure a challenging role in data analysis and software 
+                development where I can leverage my IT background to contribute innovative solutions.
+            </p>
+        </div>
+        <!-- End Section Title -->
+
+        <!-- Content -->
+        <div class="container">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                <!-- Left Column -->
+                <div data-aos="fade-up" data-aos-delay="100">
+                    <h3 class="text-lg font-semibold mb-2">Summary</h3>
+                    <div class="resume-item mb-4">
+                        <h4 class="text-md font-semibold">Eligibility</h4>
+                        <ul class="list-disc pl-5 text-gray-700">
+                            <li>3rd Year Student</li>
+                            <li>Consistent Dean’s Lister from 1st Year to Present</li>
+                            <li>Student Leader</li>
+                        </ul>
+                    </div>
+
+                    <h3 class="text-lg font-semibold mb-2">Education</h3>
+                    <div class="resume-item mb-4">
+                        <h4 class="text-md font-semibold">Awards and Achievements</h4>
+                        <ul class="list-disc pl-5 text-gray-700">
+                            <li>2015-2016: 3rd Salutatorian</li>
+                            <li>2020-2021: With Honors</li>
+                            <li>2020-2021: Agricultural Crop NC II</li>
+                            <li>2021-2022: Dean’s Lister</li>
+                            <li>2022-2023: Dean’s Lister</li>
+                        </ul>
+                    </div>
+
+                    <div class="resume-item mb-4">
+                        <strong><h4 class="text-md font-semibold">Bachelor of Information Technology &amp; Software Engineering</h4>
+                        <p class="text-gray-700">
+                            Bachelor of Science in Information Technology<br>
+                            Caraga State University<br>
+                            Ampayon, Butuan City 8600<br>
+                            Expected Graduation: June 2026
+                        </p>
+                    </strong>
+                    </div>
+                </div>
+
+                <!-- Right Column -->
+                <div data-aos="fade-up" data-aos-delay="200">
+                    <h3 class="text-lg font-semibold mb-2">Professional Experience</h3>
+                    <div class="resume-item">
+                        <h4 class="text-md font-semibold">Social Media Manager</h4>
+                        <h5 class="text-sm text-gray-600 mb-2">2019 - Present</h5>
+                        <p class="italic text-gray-700 mb-2">Remote Work</p>
+                        <ul class="list-disc pl-5 text-gray-700">
+                            <li>Social Media Manager – PakontestTv (YouTube)</li>
+                            <li>Social Media Manager – KNHS SSG (Facebook 2020-2023)</li>
+                            <li>Social Media Manager – NMC District 1 Free Methodist Youth (Facebook 2020-2022)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Content -->
+    </div>
+</div>
+
+
+    <!-- Modal 4 -->
+    <div id="modal4" class="modal-content">
+        <div class="modal-inner">
+            <div class="close" onclick="hideModal('modal4')">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </div>
+            <h2 class="text-2xl font-bold">Portfolio</h2>
+            <hr>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 isotope-container mt-10" data-aos="fade-up" data-aos-delay="200">
+
+                <!-- Portfolio Item 1 -->
+                <div class="relative bg-white rounded-lg shadow-lg overflow-hidden">
+                    <img src="img/cert/css.png" class="w-full h-48 object-cover" alt="CSS Cert">
+                    <div class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 hover:opacity-100 transition-opacity duration-300">
+                        <div class="text-center text-white p-4">
+                            <h4 class="text-lg font-semibold">CSS Cert</h4>
+                            <p>Solo Learn Certificate</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- End Portfolio Item -->
+            
+                <!-- Portfolio Item 2 -->
+                <div class="relative bg-white rounded-lg shadow-lg overflow-hidden">
+                    <img src="img/cert/html.png" class="w-full h-48 object-cover" alt="HTML Cert">
+                    <div class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 hover:opacity-100 transition-opacity duration-300">
+                        <div class="text-center text-white p-4">
+                            <h4 class="text-lg font-semibold">HTML Cert</h4>
+                            <p>Solo Learn Cert</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- End Portfolio Item -->
+            
+                <!-- Portfolio Item 3 -->
+                <div class="relative bg-white rounded-lg shadow-lg overflow-hidden">
+                    <img src="img/cert/javaScript.jpg" class="w-full h-48 object-cover" alt="JavaScript Cert">
+                    <div class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 hover:opacity-100 transition-opacity duration-300">
+                        <div class="text-center text-white p-4">
+                            <h4 class="text-lg font-semibold">JavaScript Cert</h4>
+                            <p>Solo Learn Cert</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- End Portfolio Item -->
+            
+            </div>
+                </div>
+    </div>
+
+    <script>
+        function showModal(id) {
+            document.getElementById(id).classList.add('show');
+        }
+
+        function hideModal(id) {
+            document.getElementById(id).classList.remove('show');
+        }
+    </script>
+</body>
+</html>
