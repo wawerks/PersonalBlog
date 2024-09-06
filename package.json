@@ -3,8 +3,11 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "homepage": "https://github.com/wawerks/PersonalBlog/",
   "scripts": {
-    "build-css":"tailwindcss build -i src/styles.css -o public/styles.css"
+    "build-css":"tailwindcss build -i src/styles.css -o public/styles.css",
+    "predeploy":"yarn run build",
+    "deploy":"gh-pages -d build"
   },
   "keywords": [],
   "author": "",
